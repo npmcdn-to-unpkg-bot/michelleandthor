@@ -10,6 +10,7 @@ Think tumblr but built with Rails and React - a photo aggregator from #michellea
 * Use the Instagram API for tagged photos
 * Use the Giphy API for gifs
 * No limit for the character count on the message
+* Infinite scrolling
 
 ## mvp next :waxing_crescent_moon:
 * Use Facebook API for tagged photos
@@ -18,10 +19,11 @@ Think tumblr but built with Rails and React - a photo aggregator from #michellea
 
 ## mvp almost: :first_quarter_moon:
 * Allow users to upload photos in the app - AWS storage, file uploader component
-* Allow videos from Instagram and Facebook to be embedded 
+* Allow videos from Instagram and Facebook to be embedded
+* Use the loading gif preview library
+* Style different lengths of messages differently 
 
-## mvp done: :waxing_gibbous_moon:
+## mvp done: :full_moon:
 * Find a way to get it hosted on michelleandthor.com with heroku? Digital Ocean? 
-
 
 
