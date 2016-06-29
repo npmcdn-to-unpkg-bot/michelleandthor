@@ -1,0 +1,54 @@
+
+@font-face {
+  font-family: 'Eaves-Bold';
+  src: url('/assets/MrEavesBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Eaves-Reg';
+  src: url('/assets/MrEavesReg.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Wolf';
+  src: url('/assets/Wolf.otf') format('opentype');
+}
+
+$default-font: 'Eaves-Reg';
+$default-bold: 'Eaves-Bold';
+$accent-font: 'Wolf';
+$black: #1b1b1b;
+$rose: #ffdee3;
+$gold: #fedd96;
+$white: #fffefb;
+
+body {
+  font-family: $default-font, sans-serif;
+  font-size: 2em;
+  background: $black;
+  color: $white;
+}
+
+p {
+  font-size: 1em;
+}
+
+input {
+    font-size: 100%;
+}
+
+input[type="text"] {
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+}
+
+img {
+    display: block;
+    float: left;
+}
+
+h1 {
+  font-family: $accent-font, serif;
+  font-size: 5em;
+  letter-spacing: 2px;
+}
