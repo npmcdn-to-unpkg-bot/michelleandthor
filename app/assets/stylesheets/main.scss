@@ -14,6 +14,13 @@
   src: url('/assets/Wolf.otf') format('opentype');
 }
 
+
+@font-face {
+  font-family: 'Respective';
+  src: url('/assets/Respective_2.0.ttf') format('truetype');
+}
+
+
 $default-font: 'Eaves-Reg';
 $default-bold: 'Eaves-Bold';
 $accent-font: 'Wolf';
@@ -48,7 +55,74 @@ img {
 }
 
 h1 {
-  font-family: $accent-font, serif;
+  font-family: 'Respective', serif;
   font-size: 5em;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
+
+.hero {
+  background-image: url("engagement_decorated.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
+  margin: 0 auto;
+  padding: 10%;
+  text-align: center;
+
+  h1 {
+    margin: 0 auto;
+  }
+}
+
+.choosey {
+  .fa.fa-caret-down {
+    float: right;
+    color: white;
+  }
+
+  ul {
+    background: black;
+    
+    .collapsible-header {
+      background: black;
+      height: 100px;
+      &:hover {
+        background-position: center center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+    }
+
+    .collapsible-body {
+      text-align: center;
+    }
+  }
+
+  #comment-panel {
+    &:hover {
+      background-image: url("https://media.giphy.com/media/QIZ020wbKnNio/giphy.gif");
+      /*background-image: url("https://media.giphy.com/media/mA10sco0hGFaM/giphy.gif");*/
+      background-size: 40%;
+    }
+  }
+
+  #gif-panel:hover {
+    background-image: url("http://bestanimations.com/Nature/Flora/blooming/blooming-orchid-gif.gif");
+    /*background-image: url("http://bestanimations.com/Nature/Flora/blooming/flower-bloom-animated-gif9.gif");*/
+    /*background-image: url("https://media.giphy.com/media/LPK94uJOQvExq/giphy.gif");*/
+    /*background-image: url("https://media.giphy.com/media/czevJlexlxAyc/giphy.gif");*/
+    /*background-image: url("https://media.giphy.com/media/12NkbKX4FTioP6/giphy.gif");*/
+    background-size: 50%;
+  }
+
+  #hash-panel:hover {
+    background-image: url("https://media.giphy.com/media/fw9jSdfb3wYx2/giphy.gif");
+  }
+
+
+}
+
+
+
+
+
