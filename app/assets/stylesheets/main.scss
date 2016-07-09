@@ -82,7 +82,7 @@ h1 {
 
   ul {
     background: black;
-    
+
     .collapsible-header {
       background: black;
       height: 100px;
@@ -95,6 +95,9 @@ h1 {
 
     .collapsible-body {
       text-align: center;
+      .materialize-textarea {
+        font-size: 25px;
+      }
     }
   }
 
