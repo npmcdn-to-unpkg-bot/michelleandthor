@@ -102,10 +102,24 @@ h1 {
   }
 
   #comment-panel {
-    &:hover {
+    .collapsible-header:hover {
       background-image: url("https://media.giphy.com/media/QIZ020wbKnNio/giphy.gif");
       /*background-image: url("https://media.giphy.com/media/mA10sco0hGFaM/giphy.gif");*/
       background-size: 40%;
+    }
+    .row.name-area {
+      .col.s12 {
+        margin-left: -10px;    
+      }
+      #comment_author {
+        border-bottom: 1px solid #9e9e9e;
+      }
+      input[type="text"] {
+        border: none;
+      }
+      .input-field.col.s9 {
+        width: 50%;
+      }
     }
   }
 
