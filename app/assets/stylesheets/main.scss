@@ -41,7 +41,7 @@ p {
 }
 
 input {
-    font-size: 100%;
+  color: black;
 }
 
 input[type="text"] {
@@ -125,7 +125,9 @@ h1 {
 
   .giphy-logo {
     float: right;
+    width: 100px;
   }
+
   #gif-panel:hover {
     background-image: url("http://bestanimations.com/Nature/Flora/blooming/blooming-orchid-gif.gif");
     /*background-image: url("http://bestanimations.com/Nature/Flora/blooming/flower-bloom-animated-gif9.gif");*/
