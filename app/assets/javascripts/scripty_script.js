@@ -82,6 +82,9 @@ $(document).ready(function(){
     })
   });
 
+  // select gif
+  
+
   // user selects the gif they want
   // send that img to the backend
   // save it as a Gif
