@@ -1,4 +1,3 @@
-// console.log('init!');
 
 // var access_token = "16384709.6ac06b4.49b97800d7fd4ac799a2c889f50f2587",
 //     access_parameters = {
@@ -59,3 +58,33 @@
 // foreach ($result_2->data as $post_2) {
 // 	echo '<a href="' . $post_2->link . '"><img src="' . $post_2->images->thumbnail->url . '" /></a>';
 // }
+
+
+$(document).ready(function(){
+
+  // gif
+  $('#gif-button').on('click', function(e){
+    e.preventDefault();
+    var keyword = $('#gif-search').val();
+    var url = 'http://api.giphy.com/v1/gifs/search?q=' + keyword + '&api_key=dc6zaTOxFJmzC';
+    $.ajax({
+      url: url,
+      type: 'GET',
+      dataType: 'json'
+    })
+    .done(function(responseData) {
+      var results = responseData["data"];
+      for(var i = 0; i < 5; i++){
+        var img = $("<img></img>")
+        $(img).attr("src", results[i]["images"]["original"]["url"]).addClass("result".concat(i));
+        $('.all-gifs').append(img);
+      }
+    })
+  });
+
+  // user selects the gif they want
+  // send that img to the backend
+  // save it as a Gif
+  // render it in the feed
+
+});

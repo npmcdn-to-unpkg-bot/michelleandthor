@@ -52,14 +52,24 @@
 				<div class="collapsible-header" id="gif-panel">
 					Post a gif
 					<i class="fa fa-caret-down" aria-hidden="true"></i>
-
 				</div>
 				<div class="collapsible-body">
 					<div class="row">
-		        <div class="input-field col s6">
-		          <input id="gif-search" type="gif-search">
-		          <label for="gif-search">Search for a gif</label>
-		          <%= image_tag("giphy_logo", class: "giphy-logo") %>
+		        <div class="input-field col s12">
+		        <div class="row">
+		        	<div class="col s3">
+		        		<p>Search for a gif</p>
+			          <!-- <label for="gif-search">Search for a gif</label> -->
+		        	</div>
+		        	<div class="col s9">
+			          <input id="gif-search" type="gif-search">
+			          <%= image_tag("giphy_logo", class: "giphy-logo") %>
+			          <button class="btn waves-effect waves-light center-align" id="gif-button">
+			          	Search!
+			          </button>
+		        	</div>
+		        	
+		        </div>
 		        </div>
 	        </div>
 				</div>
@@ -87,6 +97,9 @@
 		<% else %>
 			no comments currently
 		<% end %>
+	</div>
+
+	<div class="all-gifs">
 		
 	</div>
 
