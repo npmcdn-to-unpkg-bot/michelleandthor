@@ -86,6 +86,25 @@ $(document).ready(function(){
   
 
   // user selects the gif they want
+  $('.all-gifs').on('click', 'img', function(){
+    console.log(this);
+    var selectedUrl = $(this).attr('src');
+    $.ajax({
+      url: '/path/to/file',
+      type: 'post',
+      data: {selectedGif: selectedUrl},
+    })
+    .done(function() {
+      console.log("success");
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+    
+  })
   // send that img to the backend
   // save it as a Gif
   // render it in the feed
