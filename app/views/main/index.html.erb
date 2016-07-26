@@ -17,7 +17,7 @@
 				</div>
 				<div class="collapsible-body">
 					<div class="row comment-content-area">
-				    <%= form_for :comment, url: comments_path, method: :post, class: "col s12" do |f| %>
+				    <%= form_for :component, url: comments_path, method: :post, class: "col s12" do |f| %>
 				    <!-- <form class="col s12"> -->
 				      <div class="row">
 				        <div class="input-field col s12">
@@ -56,25 +56,24 @@
 				<div class="collapsible-body">
 					<div class="row">
 		        <div class="input-field col s12">
-		        <div class="row">
-		        	<div class="col s3">
-		        		<p>Search for a gif</p>
-			          <!-- <label for="gif-search">Search for a gif</label> -->
-		        	</div>
-		        	<div class="col s9">
-			          <input id="gif-search" type="gif-search">
-			          <%= image_tag("giphy_logo", class: "giphy-logo") %>
-			          <button class="btn waves-effect waves-light center-align" id="gif-button">
-			          	Search!
-			          </button>
-		        	</div>
+  		        <div class="row">
+  		        	<div class="col s3">
+  		        		<p>Search for a gif</p>
+  			          <!-- <label for="gif-search">Search for a gif</label> -->
+  		        	</div>
+  		        	<div class="col s9">
+  			          <input id="gif-search" type="gif-search">
+  			          <%= image_tag("giphy_logo", class: "giphy-logo") %>
+  			          <button class="btn waves-effect waves-light center-align" id="gif-button">
+  			          	Search!
+  			          </button>
+  		        	</div>
 
-		        	<div class="all-gifs">
-		        		
-		        	</div>
-		        	
+  		        </div>
 		        </div>
-		        </div>
+            <div class="all-gifs">
+              
+            </div>
 	        </div>
 				</div>
 			</li>
@@ -94,8 +93,8 @@
 
 
 	<div class="all-comments">
-		<% if @comments.present? %>
-			<% @comments.each do |c| %>
+		<% if @components.present? %>
+			<% @components.each do |c| %>
 				<p><%= c.author %>: <%= c.content %></p>
 			<% end %>
 		<% else %>

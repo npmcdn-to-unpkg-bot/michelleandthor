@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   get 'main/index'
   root 'main#index'
 
-  resources :comments
-
+  post 'gifs', to: 'components#create_gif'
+  post 'comments', to: 'components#create_comment'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -83,6 +83,24 @@ $(document).ready(function(){
   });
 
   // select gif
+  $('.all-gifs').on('click', 'img', function(){
+    var selectedGifUrl = $(this).attr('src');
+    $.ajax({
+      url: '/gifs',
+      type: 'post',
+      data: {selectedGifUrl: selectedGifUrl},
+    })
+    .done(function() {
+      console.log("success");
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+    
+  })
   
 
   // user selects the gif they want

@@ -1,6 +1,6 @@
 class MainController < ApplicationController
   def index
-  	@comments = Comment.all
+  	@components = Component.all
 
   end
 end
