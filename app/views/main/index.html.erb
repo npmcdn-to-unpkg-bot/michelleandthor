@@ -6,91 +6,13 @@
 		oh yeah</p>
 	</div>
 
-
-	<div class="choosey">
-		<ul class="collapsible" data-collapsible="accordion">
-			<li id="comment-panel">
-				<div class="collapsible-header">
-					Leave a comment
-					<i class="fa fa-caret-down" aria-hidden="true"></i>
-
-				</div>
-				<div class="collapsible-body">
-					<div class="row comment-content-area">
-				    <%= form_for :component, url: comments_path, method: :post, class: "col s12" do |f| %>
-				    <!-- <form class="col s12"> -->
-				      <div class="row">
-				        <div class="input-field col s12">
-	                <i class="material-icons prefix">mode_edit</i>
-				        		<%= f.text_area(:content, class: "materialize-textarea") %>
-		           
-		                <%= f.label(:content, "Write your message below")%>
-		
-	              </div>
-              </div>
-              <div class="row name-area">
-              	<div class="col s12">
-              		<div class="row">
-              			<div class="input-field col s3">
-	              			<i class="material-icons prefix">account_circle</i>
-
-		              		<%= f.text_field(:author) %>
-		              		<%= f.label(:author, "Your Name") %>
-              			</div>
-              			<div class="input-field col s9">
-		                <%= f.submit("Submit", class:"btn waves-effect waves-light center-align", type:"submit", name:"action") %>    	
-              				
-              			</div>
-              		</div>
-              	</div>
-              </div>
-	        	<% end %>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="collapsible-header" id="gif-panel">
-					Post a gif
-					<i class="fa fa-caret-down" aria-hidden="true"></i>
-				</div>
-				<div class="collapsible-body">
-					<div class="row">
-		        <div class="input-field col s12">
-  		        <div class="row">
-  		        	<div class="col s3">
-  		        		<p>Search for a gif</p>
-  			          <!-- <label for="gif-search">Search for a gif</label> -->
-  		        	</div>
-  		        	<div class="col s9">
-  			          <input id="gif-search" type="gif-search">
-  			          <%= image_tag("giphy_logo", class: "giphy-logo") %>
-  			          <button class="btn waves-effect waves-light center-align" id="gif-button">
-  			          	Search!
-  			          </button>
-  		        	</div>
-
-  		        </div>
-		        </div>
-            <div class="all-gifs">
-              
-            </div>
-	        </div>
-				</div>
-			</li>
-			<li>
-				<div class="collapsible-header" id="hash-panel">
-					#michelleandthor Photo Feed
-					<i class="fa fa-caret-down" aria-hidden="true"></i>
-
-				</div>
-				<div class="collapsible-body">
-					<p>Lorem ipsum dolor sit amet.</p>
-				</div>
-			</li>
-		</ul>
-
-	</div>
-
+  <div class="choosey">
+    <ul class="collapsible" data-collapsible="accordion">
+      <%= render partial: "leave_comment" %>
+      <%= render partial: "leave_gif" %>
+      <%= render partial: "tagged_feed" %>
+    </ul>
+  </div>
 
 	<div class="all-comments">
 		<% if @components.present? %>

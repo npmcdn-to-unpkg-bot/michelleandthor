@@ -1,0 +1,45 @@
+<li>
+  <div class="collapsible-header" id="gif-panel">
+    Post a gif
+    <i class="fa fa-caret-down" aria-hidden="true"></i>
+  </div>
+  <div class="collapsible-body">
+    <div class="row">
+      <div class="input-field col s12">
+        <div class="row">
+          <div class="col s3">
+            <p>Search for a gif</p>
+            <!-- <label for="gif-search">Search for a gif</label> -->
+          </div>
+          <div class="col s9">
+            <input id="gif-search" type="gif-search">
+            <%= image_tag("giphy_logo", class: "giphy-logo") %>
+            <button class="btn waves-effect waves-light center-align" id="gif-button">
+              Search!
+            </button>
+          </div>
+
+        </div>
+      </div>
+      <div class="all-gifs">
+        <a class="results-section" id="results1">
+        
+        </a>
+
+        <a class="results-section" id="results2">
+          
+        </a>
+
+        <ul class="pagination">
+            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            <li class="waves-effect active" id="goto-1"><a href="#results1">1</a></li>
+            <li class="waves-effect" id="goto-2"><a href="#!" >2</a></li>
+            <li class="waves-effect"><a href="#!">3</a></li>
+            <li class="waves-effect"><a href="#!">4</a></li>
+            <li class="waves-effect"><a href="#!">5</a></li>
+            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</li>
