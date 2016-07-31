@@ -61,7 +61,7 @@ h1 {
 }
 
 .hero {
-  background-image: url("engagement_decorated.jpg");
+  background-image: url("engagement.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 90vh;
@@ -141,6 +141,15 @@ h1 {
     background-image: url("https://media.giphy.com/media/fw9jSdfb3wYx2/giphy.gif");
   }
 
+  .all-gifs {
+    .results-section {
+      display: none;
+    }
+    img {
+      max-width: 250px;
+      cursor: pointer;
+    }
+  }
 
 }
 

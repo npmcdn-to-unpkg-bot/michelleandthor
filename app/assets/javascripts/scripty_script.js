@@ -61,6 +61,18 @@
 
 
 $(document).ready(function(){
+  function displayResultsRound(results, roundNumber) {
+    var startPoint = roundNumber*10 - 10;
+    var endPoint = roundNumber*10;
+
+    for(var i = startPoint; i < endPoint; i++){
+      var img = $("<img></img>")
+      $(img).attr("src", results[i]["images"]["original"]["url"]).addClass("result".concat(i));
+      $('.results-section').hide();
+      $('#results' + roundNumber).show();
+      $('#results' + roundNumber).append(img);
+    }
+  }
 
   // gif
   $('#gif-button').on('click', function(e){
@@ -74,13 +86,43 @@ $(document).ready(function(){
     })
     .done(function(responseData) {
       var results = responseData["data"];
-      for(var i = 0; i < 5; i++){
-        var img = $("<img></img>")
-        $(img).attr("src", results[i]["images"]["original"]["url"]).addClass("result".concat(i));
-        $('.all-gifs').append(img);
-      }
+      displayResultsRound(results, 1);
+      displayResultsRound(results, 2);
+      displayResultsRound(results, 3);
+      displayResultsRound(results, 4);
+      displayResultsRound(results, 5);
+      displayResultsRound(results, 6);
     })
   });
+
+  $('#goto-2').on('click', function(){
+    $('.results-section').hide();
+
+    $('#results2').fadeIn('slow');
+    $('.waves-effect').removeClass('active')
+    $('#goto-2').addClass('active');
+  })
+
+  // select gif
+  $('.all-gifs').on('click', 'img', function(){
+    var selectedGifUrl = $(this).attr('src');
+    $.ajax({
+      url: '/gifs',
+      type: 'post',
+      data: {selectedGifUrl: selectedGifUrl},
+    })
+    .done(function() {
+      console.log("success");
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+    
+  })
+  
 
   // user selects the gif they want
   // send that img to the backend
