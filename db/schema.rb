@@ -28,11 +28,4 @@ ActiveRecord::Schema.define(version: 20160726050547) do
     t.string   "category"
   end
 
-  create_table "gifs", force: :cascade do |t|
-    t.string   "image_url"
-    t.string   "author"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end

@@ -64,10 +64,10 @@ $(document).ready(function(){
   function displayResultsRound(results, roundNumber) {
     var startPoint = roundNumber*10 - 10;
     var endPoint = roundNumber*10;
-
     for(var i = startPoint; i < endPoint; i++){
-      var img = $("<img></img>")
-      $(img).attr("src", results[i]["images"]["original"]["url"]).addClass("result".concat(i));
+      var img = $("<img></img>");
+      var src = results[i]["images"]["original"]["url"];
+      $(img).attr("src", src).addClass("result".concat(i));
       $('.results-section').hide();
       $('#results' + roundNumber).show();
       $('#results' + roundNumber).append(img);
