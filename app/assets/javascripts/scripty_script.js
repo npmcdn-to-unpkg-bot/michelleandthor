@@ -61,19 +61,23 @@
 
 
 $(document).ready(function(){
-  // function displayResultsRound(results, roundNumber) {
-  //   var startPoint = roundNumber*10 - 10;
-  //   var endPoint = roundNumber*10;
-  //   for(var i = startPoint; i < endPoint; i++){
-  //     var img = $("<img></img>");
-  //     var src = results[i]["images"]["original"]["url"];
-  //     $(img).attr("src", src).addClass("result".concat(i));
-  //     $('.pagination').show();
-  //     $('.results-section').hide();
-  //     $('#results' + roundNumber).show();
-  //     $('#results' + roundNumber).append(img);
-  //   }
-  // }
+  function displayResultsRound(results, roundNumber) {
+    var endPoint = 10;
+
+    if(results.length < 10){
+      endPoint = results.length;
+    }
+
+    for(var i = 0; i < endPoint; i++){
+      var img = $("<img></img>");
+      var src = results[i]["images"]["original"]["url"];
+      $(img).attr("src", src).addClass("result".concat(i));
+      $('.pagination').show();
+      $('#results' + roundNumber).append(img);
+    }
+    $('#goto-1').addClass("active");
+    $('#results1').show();
+  }
 
   // gif
   $('#gif-button').on('click', function(e){
@@ -87,40 +91,18 @@ $(document).ready(function(){
     })
     .done(function(responseData) {
       var results = responseData["data"];
+      var numberOfRounds = Math.round(results.length / 10);
 
-      for(var i = 0; i < 10; i++){
-        var img = $("<img></img>");
-        var src = results[i]["images"]["original"]["url"];
-        $(img).attr("src", src).addClass("result".concat(i));
-        // $('.results-section').hide();
-        $('#results1').show();
-        $('#results1').append(img);
+      for(var i = 1; i <= numberOfRounds; i++) {
+        var endPoint = i*10;
+        var startPoint = i*10 - 10;
+        var range = results.slice(startPoint, endPoint);
+        displayResultsRound(range, i);
+        var li = $("<li class='waves-effect'> <a href='#!'>" + i + "</a></li>");
+
+        $('.pagination').append(li);
+        $(li).attr("id", "goto-" + i);
       }
-
-      for(var j = 10; j < 20; j++){
-        var img = $("<img></img>");
-        var src = results[j]["images"]["original"]["url"];
-        $(img).attr("src", src).addClass("result".concat(j));
-        // $('.results-section').hide();
-        // $('#results' + roundNumber).show();
-        $('#results2').append(img);
-      }
-
-      for(var k = 20; k < 30; k++){
-        var img = $("<img></img>");
-        var src = results[k]["images"]["original"]["url"];
-        $(img).attr("src", src).addClass("result".concat(k));
-        // $('.results-section').hide();
-        // $('#results' + roundNumber).show();
-        $('#results3').append(img);
-      }
-
-      // displayResultsRound(results, 1);
-      // displayResultsRound(results, 2);
-      // displayResultsRound(results, 3);
-      // displayResultsRound(results, 4);
-      // displayResultsRound(results, 5);
-      // displayResultsRound(results, 6);
     })
   });
 
