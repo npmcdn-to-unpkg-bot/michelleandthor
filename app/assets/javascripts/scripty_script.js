@@ -61,18 +61,19 @@
 
 
 $(document).ready(function(){
-  function displayResultsRound(results, roundNumber) {
-    var startPoint = roundNumber*10 - 10;
-    var endPoint = roundNumber*10;
-    for(var i = startPoint; i < endPoint; i++){
-      var img = $("<img></img>");
-      var src = results[i]["images"]["original"]["url"];
-      $(img).attr("src", src).addClass("result".concat(i));
-      $('.results-section').hide();
-      $('#results' + roundNumber).show();
-      $('#results' + roundNumber).append(img);
-    }
-  }
+  // function displayResultsRound(results, roundNumber) {
+  //   var startPoint = roundNumber*10 - 10;
+  //   var endPoint = roundNumber*10;
+  //   for(var i = startPoint; i < endPoint; i++){
+  //     var img = $("<img></img>");
+  //     var src = results[i]["images"]["original"]["url"];
+  //     $(img).attr("src", src).addClass("result".concat(i));
+  //     $('.pagination').show();
+  //     $('.results-section').hide();
+  //     $('#results' + roundNumber).show();
+  //     $('#results' + roundNumber).append(img);
+  //   }
+  // }
 
   // gif
   $('#gif-button').on('click', function(e){
@@ -86,14 +87,47 @@ $(document).ready(function(){
     })
     .done(function(responseData) {
       var results = responseData["data"];
-      displayResultsRound(results, 1);
-      displayResultsRound(results, 2);
-      displayResultsRound(results, 3);
-      displayResultsRound(results, 4);
-      displayResultsRound(results, 5);
-      displayResultsRound(results, 6);
+
+      for(var i = 0; i < 10; i++){
+        var img = $("<img></img>");
+        var src = results[i]["images"]["original"]["url"];
+        $(img).attr("src", src).addClass("result".concat(i));
+        // $('.results-section').hide();
+        $('#results1').show();
+        $('#results1').append(img);
+      }
+
+      for(var j = 10; j < 20; j++){
+        var img = $("<img></img>");
+        var src = results[j]["images"]["original"]["url"];
+        $(img).attr("src", src).addClass("result".concat(j));
+        // $('.results-section').hide();
+        // $('#results' + roundNumber).show();
+        $('#results2').append(img);
+      }
+
+      for(var k = 20; k < 30; k++){
+        var img = $("<img></img>");
+        var src = results[k]["images"]["original"]["url"];
+        $(img).attr("src", src).addClass("result".concat(k));
+        // $('.results-section').hide();
+        // $('#results' + roundNumber).show();
+        $('#results3').append(img);
+      }
+
+      // displayResultsRound(results, 1);
+      // displayResultsRound(results, 2);
+      // displayResultsRound(results, 3);
+      // displayResultsRound(results, 4);
+      // displayResultsRound(results, 5);
+      // displayResultsRound(results, 6);
     })
   });
+
+  $('.all-gifs').on('click', 'img', function(){
+    console.log('clicked');
+    console.log(this);
+  })
 
   $('#goto-2').on('click', function(){
     $('.results-section').hide();
