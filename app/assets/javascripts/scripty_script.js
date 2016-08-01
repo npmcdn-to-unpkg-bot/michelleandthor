@@ -83,7 +83,7 @@ $(document).ready(function(){
   $('#gif-button').on('click', function(e){
     e.preventDefault();
     var keyword = $('#gif-search').val();
-    var url = 'http://api.giphy.com/v1/gifs/search?q=' + keyword + '&api_key=dc6zaTOxFJmzC';
+    var url = 'http://api.giphy.com/v1/gifs/search?q=' + keyword + '&api_key=dc6zaTOxFJmzC&limit=100';
     $.ajax({
       url: url,
       type: 'GET',
@@ -112,6 +112,7 @@ $(document).ready(function(){
   })
 
   $('#goto-2').on('click', function(){
+    console.log("init")
     $('.results-section').hide();
 
     $('#results2').fadeIn('slow');
