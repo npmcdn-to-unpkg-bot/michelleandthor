@@ -69,20 +69,21 @@ $(document).ready(function(){
     }
 
     for(var i = 0; i < endPoint; i++){
+      var divGrid = $("<div class='grid-item'></div>")
       var img = $("<img></img>");
       var src = results[i]["images"]["original"]["url"];
       $(img).attr("src", src).addClass("result".concat(i));
       $('.pagination').show();
-      $('#results' + roundNumber).append(img);
+      $('#results' + roundNumber).append(divGrid.append(img));
     }
     $('#goto-1').addClass("active");
     $('#results1').show();
   }
 
   // gif
-  $('#gif-button').on('click', function(e){
+  $('#gif-search').on('change', function(e){
     e.preventDefault();
-    var keyword = $('#gif-search').val();
+    var keyword = $('#gif-search').val().replace(/\s/g, '+');
     var url = 'http://api.giphy.com/v1/gifs/search?q=' + keyword + '&api_key=dc6zaTOxFJmzC&limit=100';
     $.ajax({
       url: url,
@@ -145,5 +146,6 @@ $(document).ready(function(){
   // send that img to the backend
   // save it as a Gif
   // render it in the feed
+
 
 });

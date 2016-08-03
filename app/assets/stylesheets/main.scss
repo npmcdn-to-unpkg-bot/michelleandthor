@@ -142,8 +142,9 @@ h1 {
   }
 
   .all-gifs {
+    width: 75%;
+    margin: 0 auto;
     img {
-      max-width: 250px;
       cursor: pointer;
     }
   }
@@ -158,6 +159,15 @@ h1 {
   display: none;
 }
 
+
+/*masonry grid*/
+.grid-item {
+  margin-bottom: 10px;
+  img {
+    max-height: 150px;
+    margin: 15px;
+  }
+}
 
 
 
