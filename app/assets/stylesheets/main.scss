@@ -159,6 +159,36 @@ h1 {
   display: none;
 }
 
+#gif-search {
+  border-radius: 30px;
+  padding: 10px 20px;
+  border: none;
+  height: 45px;
+  &:focus {
+    outline: none;
+  }
+}
+
+
+/*placeholder*/
+::-webkit-input-placeholder {
+   font-size: 20px;
+   padding-left: 10px;
+   line-height: 1;
+}
+:-moz-placeholder { /* Firefox 18- */
+   font-size: 20px;
+   padding-left: 10px;  
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   font-size: 20px;
+   padding-left: 10px;  
+}
+:-ms-input-placeholder {  
+   font-size: 20px;
+   padding-left: 10px;  
+}
+
 
 /*masonry grid*/
 .grid-item {
