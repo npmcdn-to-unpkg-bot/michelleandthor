@@ -23,7 +23,7 @@
                 <div class="input-field col s3">
                   <i class="material-icons prefix">account_circle</i>
 
-                  <%= f.text_field(:author) %>
+                  <%= f.text_area(:author, class: 'materialize-textarea', required: true) %>
                   <%= f.label(:author, "Your Name") %>
                 </div>
                 <div class="input-field col s9">
