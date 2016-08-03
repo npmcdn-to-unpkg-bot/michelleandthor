@@ -76,7 +76,7 @@ $(document).ready(function(){
       $('.pagination').show();
       $('#results' + roundNumber).append(divGrid.append(img));
     }
-    $('#goto-1').addClass("active");
+    $('.pagination').find('[data-id="1"]').addClass("active");
     $('#results1').show();
   }
 
@@ -99,10 +99,10 @@ $(document).ready(function(){
         var startPoint = i*10 - 10;
         var range = results.slice(startPoint, endPoint);
         displayResultsRound(range, i);
-        var li = $("<li class='waves-effect'> <a href='#!'>" + i + "</a></li>");
+        var li = $("<li class='waves-effect goto' data-id=" + i +"> <a href='#!'>" + i + "</a></li>");
 
         $('.pagination').append(li);
-        $(li).attr("id", "goto-" + i);
+        // $(li).attr({"id", "goto-" + i)};
       }
     })
   });
@@ -112,13 +112,13 @@ $(document).ready(function(){
     console.log(this);
   })
 
-  $('#goto-2').on('click', function(){
-    console.log("init")
+  $('.pagination').on('click', '.goto', function(){
+    var pageNumber = $(this).attr('data-id');
     $('.results-section').hide();
 
-    $('#results2').fadeIn('slow');
+    $('#results' + pageNumber).fadeIn('slow');
     $('.waves-effect').removeClass('active')
-    $('#goto-2').addClass('active');
+    $(this).addClass('active');
   })
 
   // select gif

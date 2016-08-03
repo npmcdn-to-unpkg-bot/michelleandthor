@@ -169,6 +169,16 @@ h1 {
   }
 }
 
+.heheoops:before, 
+.heheoops:after {
+  content: " "; 
+  display: table; 
+}
+
+.heheoops:after {
+  clear: both;
+}
+
 
 /*placeholder*/
 ::-webkit-input-placeholder {
