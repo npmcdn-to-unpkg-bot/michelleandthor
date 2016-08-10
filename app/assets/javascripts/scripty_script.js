@@ -107,11 +107,6 @@ $(document).ready(function(){
     })
   });
 
-  $('.all-gifs').on('click', 'img', function(){
-    console.log('clicked');
-    console.log(this);
-  })
-
   $('.pagination').on('click', '.goto', function(){
     var pageNumber = $(this).attr('data-id');
     $('.results-section').hide();
@@ -123,11 +118,19 @@ $(document).ready(function(){
 
   // select gif
   $('.all-gifs').on('click', 'img', function(){
-    var selectedGifUrl = $(this).attr('src');
+    $('.all-gifs img').css("border", "none").removeClass("selected-gif");
+    $(this).css("border", "3px solid beige").addClass("selected-gif")
+  });
+  
+  $('#gif-button').on('click', function(){
+    debugger
+    $('.all-gifs .selected-gif').attr('src');
+    selectedGifUrl
+
     $.ajax({
       url: '/gifs',
       type: 'post',
-      data: {selectedGifUrl: selectedGifUrl},
+      data: {selectedGifUrl: selectedGifUrl, author: author, to_prompt: to_prompt},
     })
     .done(function() {
       console.log("success");
@@ -138,12 +141,9 @@ $(document).ready(function(){
     .always(function() {
       console.log("complete");
     });
-    
   })
-  
-
-  // user selects the gif they want
-  // send that img to the backend
+  // user selects the gif they want & it's highlighted
+  // user clicks Submit - send that img, author, to_post to the backend
   // save it as a Gif
   // render it in the feed
 

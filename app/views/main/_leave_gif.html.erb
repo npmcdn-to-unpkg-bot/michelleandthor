@@ -10,9 +10,6 @@
         <h5><em>Suggested prompt: What is a fun date idea?</em></h5>
         <div class="row">
           <input id="gif-search" type="gif-search" placeholder="Search for a gif">
-          <button class="btn waves-effect waves-light center-align" id="gif-button">
-            go!
-          </button>
         </div>
       </div>
       <div class="all-gifs grid">
@@ -36,18 +33,30 @@
         </ul>
       </div>
       
-      <div class="author-section row ">
-        <div class="input-field col s6">
-          <input value="Alvin" id="first_name2" type="text" class="validate">
-          <label class="active" for="first_name2">First Name</label>
-        </div>
+      <%= form_for :component, url: gifs_path, method: :post, class: "col s12", remote: true do |f| %>
+      <div class="row name-area">
+        <div class="col s12">
+          <div class="row">
+            <div class="input-field col s3">
+              <i class="material-icons prefix">account_circle</i>
 
-        <div class="input-field col s6">
-          <input type="checkbox" class="filled-in" id="filled-in-box"/>
-                <label for="filled-in-box">Check if you are answering the prompt</label>
+              <%= f.text_area(:author, class: 'materialize-textarea', required: true) %>
+              <%= f.label(:author, "Your Name") %>
+            </div>
+
+            <div class="input-field col s3">
+              <%= f.check_box(:to_prompt, class: 'filled-in') %>
+              <%= f.label(:to_prompt, "Check if you are answering the prompt") %>
+            </div>
+
+            <div class="col s3">
+              <%= f.submit 'Yeah!', class: "btn waves-effect waves-light center-align", id: "gif-button" %>
+            </div>
+          </div>
         </div>
-        
       </div>
+      <% end %>
+
     </div>
   </div>
 </li>

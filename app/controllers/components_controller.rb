@@ -1,7 +1,6 @@
 class ComponentsController < ApplicationController
 
   def create_gif
-    p "----"*100
     Component.create(content: params[:selectedGifUrl], author: params[:author], category: "gif");
   end
 
