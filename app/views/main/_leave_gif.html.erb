@@ -33,7 +33,7 @@
         </ul>
       </div>
       
-      <%= form_for :component, url: gifs_path, method: :post, class: "col s12", remote: true do |f| %>
+      <%= form_for :component, url: gifs_path, method: :post, class: "col s12", html: {id: "gif-form"} do |f| %>
       <div class="row name-area">
         <div class="col s12">
           <div class="row">

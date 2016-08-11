@@ -1,7 +1,8 @@
 class ComponentsController < ApplicationController
 
   def create_gif
-    Component.create(content: params[:selectedGifUrl], author: params[:author], category: "gif");
+    Component.create(content: params[:selectedGifUrl], author: params[:author], to_prompt: params[:to_prompt], category: "gif")
+    redirect_to root_path
   end
 
   def create_comment

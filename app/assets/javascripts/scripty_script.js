@@ -122,10 +122,11 @@ $(document).ready(function(){
     $(this).css("border", "3px solid beige").addClass("selected-gif")
   });
   
-  $('#gif-button').on('click', function(){
-    debugger
-    $('.all-gifs .selected-gif').attr('src');
-    selectedGifUrl
+  $('#gif-form').on('submit', function(){
+
+    var selectedGifUrl = $('.all-gifs .selected-gif').attr('src');
+    var author = $('.main-gif-section #component_author').val();
+    var to_prompt = $('.main-gif-section #component_to_prompt').is(':checked');
 
     $.ajax({
       url: '/gifs',
