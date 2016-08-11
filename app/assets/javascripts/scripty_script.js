@@ -84,7 +84,7 @@ $(document).ready(function(){
   $('#gif-search').on('change', function(e){
     e.preventDefault();
     var keyword = $('#gif-search').val().replace(/\s/g, '+');
-    var url = 'http://api.giphy.com/v1/gifs/search?q=' + keyword + '&api_key=dc6zaTOxFJmzC&limit=100';
+    var url = 'https://api.giphy.com/v1/gifs/search?q=' + keyword + '&api_key=dc6zaTOxFJmzC&limit=100';
     $.ajax({
       url: url,
       type: 'GET',
