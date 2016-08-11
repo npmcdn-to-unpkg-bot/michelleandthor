@@ -61,7 +61,7 @@ h1 {
 }
 
 .hero {
-  background-image: url("engagement.jpg");
+  background: image-url("engagement.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 90vh;
@@ -125,7 +125,7 @@ h1 {
 
   #gif-panel:hover {
     background-image: url("http://bestanimations.com/Nature/Flora/blooming/blooming-orchid-gif.gif");
-    /*background-image: url("http://bestanimations.com/Nature/Flora/blooming/flower-bloom-animated-gif9.gif");*/
+    /*background: image-url("http://bestanimations.com/Nature/Flora/blooming/flower-bloom-animated-gif9.gif");*/
     /*background-image: url("https://media.giphy.com/media/LPK94uJOQvExq/giphy.gif");*/
     /*background-image: url("https://media.giphy.com/media/czevJlexlxAyc/giphy.gif");*/
     /*background-image: url("https://media.giphy.com/media/12NkbKX4FTioP6/giphy.gif");*/
