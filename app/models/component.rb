@@ -1,4 +1,5 @@
 class Component < ActiveRecord::Base
+  belongs_to :prompt
 
   # temporary fix for now
   scope :is_approved, -> {where.not(author: [nil, ""], content: nil, category: nil) }
