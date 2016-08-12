@@ -29,7 +29,9 @@
                   <%= c.content %>
                 </p>
                 <% if c.to_prompt? %>
-                 <p class="prompt">How did you meet Michelle and/or Thor?</p>
+                 <p class="prompt">
+                   <%= @prompt.content %>
+                 </p>
                 <% end %>
               </div>
             <% elsif c.short_comment? %>
@@ -41,7 +43,9 @@
                   <%= c.content %>
                 </p>
                 <% if c.to_prompt? %>
-                 <p class="prompt">How did you meet Michelle and/or Thor?</p>
+                 <p class="prompt">
+                   <%= @prompt.content %>
+                 </p>
                 <% end %>
               </div>
             <% elsif c.gif? %>
@@ -54,7 +58,9 @@
                      <%= c.author %>
                    </h2>
                    <% if c.to_prompt? %>
-                    <p class="prompt">How did you meet Michelle and/or Thor?</p>
+                    <p class="prompt">
+                      <%= @prompt.content %>
+                    </p>
                    <% end %>
                  </div>
               </div>
