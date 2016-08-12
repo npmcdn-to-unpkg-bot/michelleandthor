@@ -1,12 +1,12 @@
 
 @font-face {
-  font-family: 'Eaves-Bold';
-  src: url('/assets/MrEavesBold.otf') format('opentype');
+  font-family: 'GothamBold';
+  src: url('/assets/GothamBold.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Eaves-Reg';
-  src: url('/assets/MrEavesReg.otf') format('opentype');
+  font-family: 'GothamReg';
+  src: url('/assets/GothamLight.ttf') format('truetype');
 }
 
 @font-face {
@@ -21,13 +21,18 @@
 }
 
 
-$default-font: 'Eaves-Reg';
-$default-bold: 'Eaves-Bold';
+$default-font: 'GothamReg';
+$default-bold: 'GothamBold';
 $accent-font: 'Wolf';
-$black: #1b1b1b;
+$black: black;
+$charcoal: #2E2E30;
 $rose: #ffdee3;
+$dark-pink: #B8124A;
 $gold: #fedd96;
+$cream: #F8E2D9;
 $white: #fffefb;
+
+
 
 body {
   font-family: $default-font, sans-serif;
@@ -213,5 +218,83 @@ h1 {
 }
 
 
+.dat-feedz {
+  .grid-item {
+    border: 2px solid $rose;
+    padding: 0;
+    margin: 1%;
+  }
+
+  .author-name {
+    font-family: $accent-font;
+    letter-spacing: 2px;
+    color: $black;
+    font-size: 2em;
+  }
+
+  .prompt {
+    font-style: italic;
+    font-size: .75em;
+    margin-bottom: 0;
+    color: $black;
+  }
+
+  .long-comment {
+    background: $rose;
+    color: $black;
+    padding: 5%;
+  }
+
+  .short-comment {
+    &.card {
+      background: $black;
+      color: $rose;
+      padding: 5%;
+      line-height: .8;
+      letter-spacing: 2px;
+    }
+    .author-name {
+      color: $rose;
+      font-family: $default-font;
+      font-size: 1em;
+    }
+    .content {
+      font-family: $accent-font;
+      font-size: 3em;
+    }
+    .prompt {
+      color: $rose;
+    }
+  }
+
+  .gif-comment {
+    &.card {
+      background: $rose;
+      text-align: center;
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      margin: 0px;
+    }
+    &.card .card-content {
+      .prompt {
+        color: $black;
+      }
+    }
+  }
+
+  .card {
+    margin: 0;
+  }
+}
 
 
+@media only screen and (min-width: 601px) {
+  .row .col.m4 {
+    width: 32%;
+    .card {
+      margin: 10px;
+    }
+  }
+}

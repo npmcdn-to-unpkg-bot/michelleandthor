@@ -14,17 +14,60 @@
     </ul>
   </div>
 
-	<div class="all-comments">
-		<% if @components.present? %>
-			<% @components.each do |c| %>
-				<p><%= c.author %>: <%= c.content %></p>
-			<% end %>
-		<% else %>
-			no comments currently
-		<% end %>
+  <a id="all-comments"></a>
+	<div class="dat-feedz grid">
+    <div class="grid-sizer"></div>
+    <div class="row">
+  		<% if @components.present? %>
+  			<% @components.each do |c| %>
+          <div class="grid-item col s12 m4">
+            <% if c.long_comment? %>
+              <div class="long-comment">
+                <h2 class="author-name">
+                  <%= c.author %>
+                </h2>
+                <p class="content">
+                  <%= c.content %>
+                </p>
+                <% if c.to_prompt? %>
+                 <p class="prompt">What is a fun date?</p>
+                <% end %>
+              </div>
+            <% elsif c.short_comment? %>
+              <div class="card short-comment">
+                <h2 class="author-name">
+                  <%= c.author %>
+                </h2>
+                <p class="content">
+                  <%= c.content %>
+                </p>
+                <% if c.to_prompt? %>
+                 <p class="prompt">What is a fun date?</p>
+                <% end %>
+              </div>
+            <% elsif c.gif? %>
+              <div class="card gif-comment">
+                 <div class="card-image">
+                  <%= image_tag c.content %>
+                 </div>
+                 <div class="card-content">
+                   <h2 class="card-title activator grey-text text-darken-4 author-name">
+                     <%= c.author %>
+                   </h2>
+                   <% if c.to_prompt? %>
+                    <p class="prompt">What is a fun date?</p>
+                   <% end %>
+                 </div>
+              </div>
+    			  <% end %>
+          </div>
+        <% end %>
+  		<% else %>
+  			no comments currently
+  		<% end %>
+    </div>
 	</div>
 
 	<div id="target"></div>
-
     
 </div>

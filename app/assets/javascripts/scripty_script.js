@@ -148,5 +148,11 @@ $(document).ready(function(){
   // save it as a Gif
   // render it in the feed
 
+  $('.grid').masonry({
+    // options...
+    itemSelector: '.grid-item',
+    columnWidth: 200
+  });
+
 
 });
