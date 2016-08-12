@@ -26,6 +26,10 @@
                   <%= f.text_area(:author, class: 'materialize-textarea', required: true) %>
                   <%= f.label(:author, "Your Name") %>
                 </div>
+                <div class="input-field col s3">
+                  <%= f.check_box(:to_prompt, class: 'filled-in') %>
+                  <%= f.label(:to_prompt, "Check if you are answering the prompt") %>
+                </div>
                 <div class="input-field col s9">
                 <%= f.submit("Submit", class:"btn waves-effect waves-light center-align", type:"submit", name:"action") %>      
                   
