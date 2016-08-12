@@ -59,6 +59,13 @@ h1 {
   letter-spacing: 1px;
 }
 
+.btn, .btn-large {
+  background: $rose;
+  &:hover {
+    background: $dark-pink;
+  }
+}
+
 .hero {
   background: image-url("engagement.jpg");
   background-size: cover;
