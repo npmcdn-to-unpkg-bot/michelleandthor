@@ -9,10 +9,11 @@ class Component < ActiveRecord::Base
   end
 
   def long_comment?
-    category == 'comment' && content.length >= 140
+    category == 'comment' && content.length >= 50
   end
 
   def short_comment?
-    category == 'comment' && content.length < 140
+    category == 'comment' && content.length < 50
   end
+
 end

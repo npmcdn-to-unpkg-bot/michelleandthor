@@ -128,7 +128,7 @@ $(document).ready(function(){
 
     var selectedGifUrl = $('.all-gifs .selected-gif').attr('src');
     var author = $('.main-gif-section #component_author').val();
-    var to_prompt = $('.main-gif-section #component_to_prompt').is(':checked');
+    var to_prompt = $('.main-gif-section #to-prompt-gif').is(':checked');
 
     $.ajax({
       url: '/gifs',

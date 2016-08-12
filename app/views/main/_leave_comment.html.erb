@@ -6,7 +6,7 @@
     </div>
     <div class="collapsible-body">
       <div class="row comment-content-area">
-        <%= form_for :component, url: comments_path, method: :post, class: "col s12" do |f| %>
+        <%= form_for :component, url: comments_path, method: :post, class: "col s12", html: {id: "comment-form"} do |f| %>
         <!-- <form class="col s12"> -->
           <div class="row">
             <div class="input-field col s12">
@@ -27,8 +27,9 @@
                   <%= f.label(:author, "Your Name") %>
                 </div>
                 <div class="input-field col s3">
-                  <%= f.check_box(:to_prompt, class: 'filled-in') %>
-                  <%= f.label(:to_prompt, "Check if you are answering the prompt") %>
+                  <%= f.check_box(:to_prompt, class: 'filled-in', id: 'to-prompt-comment') %>
+                  <label for="to-prompt-comment">Check if you are answering the prompt</label>
+      
                 </div>
                 <div class="input-field col s9">
                 <%= f.submit("Submit", class:"btn waves-effect waves-light center-align", type:"submit", name:"action") %>      

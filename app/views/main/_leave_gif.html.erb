@@ -47,8 +47,9 @@
             </div>
 
             <div class="input-field col s3">
-              <%= f.check_box(:to_prompt, class: 'filled-in') %>
-              <%= f.label(:to_prompt, "Check if you are answering the prompt") %>
+              <%= f.check_box(:to_prompt, class: 'filled-in', id: 'to-prompt-gif') %>
+
+              <label for="to-prompt-gif">Check if you are answering the prompt"</label>
               <%= f.hidden_field :prompt_id %>
             </div>
 
