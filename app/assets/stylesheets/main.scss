@@ -15,12 +15,6 @@
 }
 
 
-@font-face {
-  font-family: 'Respective';
-  src: url('/assets/Respective_2.0.ttf') format('truetype');
-}
-
-
 $default-font: 'GothamReg';
 $default-bold: 'GothamBold';
 $accent-font: 'Wolf';
@@ -60,7 +54,7 @@ img {
 }
 
 h1 {
-  font-family: 'Respective', serif;
+  font-family: $accent-font;
   font-size: 5em;
   letter-spacing: 1px;
 }
@@ -220,7 +214,6 @@ h1 {
 
 .dat-feedz {
   .grid-item {
-    border: 2px solid $rose;
     padding: 0;
     margin: 1%;
   }
@@ -243,9 +236,15 @@ h1 {
     background: $rose;
     color: $black;
     padding: 5%;
+    border-radius: 3px;
+    .author-name {
+      margin: 0px;
+    }
   }
 
   .short-comment {
+    border: 2px solid $rose;
+    border-radius: 3px;
     &.card {
       background: $black;
       color: $rose;
@@ -268,19 +267,27 @@ h1 {
   }
 
   .gif-comment {
+    border-radius: 3px;
     &.card {
       background: $rose;
       text-align: center;
+      .card-content {
+        padding: 0;
+        .prompt {
+          color: $black;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+        .card-title {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
     }
     img {
       max-width: 100%;
       max-height: 100%;
       margin: 0px;
-    }
-    &.card .card-content {
-      .prompt {
-        color: $black;
-      }
     }
   }
 
