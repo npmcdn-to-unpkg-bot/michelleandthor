@@ -5,9 +5,11 @@
 
     </div>
     <div class="collapsible-body">
-      <div class="row comment-content-area">
+      <div class="comment-content-area">
+        <h5 class="prompt-q">
+          <em>Suggested prompt: <%= @prompt.content %></em>
+        </h5>
         <%= form_for :component, url: comments_path, method: :post, class: "col s12", html: {id: "comment-form"} do |f| %>
-        <!-- <form class="col s12"> -->
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">mode_edit</i>
@@ -20,19 +22,19 @@
           <div class="row name-area">
             <div class="col s12">
               <div class="row">
-                <div class="input-field col s3">
+                <div class="input-field col s4">
                   <i class="material-icons prefix">account_circle</i>
 
                   <%= f.text_area(:author, class: 'materialize-textarea', required: true) %>
                   <%= f.label(:author, "Your Name") %>
                 </div>
-                <div class="input-field col s3">
+                <div class="input-field col s4">
                   <%= f.check_box(:to_prompt, class: 'filled-in', id: 'to-prompt-comment') %>
                   <label for="to-prompt-comment">Check if you are answering the prompt</label>
       
                 </div>
-                <div class="input-field col s9">
-                <%= f.submit("Submit", class:"btn waves-effect waves-light center-align", type:"submit", name:"action") %>      
+                <div class="input-field col s4 submit-column">
+                <%= f.submit("Submit", class:"btn waves-effect waves-light submit-button", type:"submit", name:"action") %>      
                   
                 </div>
               </div>

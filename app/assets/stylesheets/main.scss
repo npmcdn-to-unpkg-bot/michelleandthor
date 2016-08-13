@@ -59,6 +59,7 @@ h1 {
   letter-spacing: 1px;
 }
 
+
 .btn, .btn-large {
   background: $rose;
   &:hover {
@@ -80,6 +81,15 @@ h1 {
   }
 }
 
+#component_author.materialize-textarea {
+  padding: 0;
+}
+
+.submit-column {
+  text-align: right;
+  float: right;
+}
+
 .choosey {
   .fa.fa-caret-down {
     float: right;
@@ -91,7 +101,8 @@ h1 {
 
     .collapsible-header {
       background: black;
-      height: 100px;
+      height: 150px;
+      font-size: 1.25em;
       &:hover {
         background-position: center center;
         background-repeat: no-repeat;
@@ -107,6 +118,13 @@ h1 {
     }
   }
 
+  .row.name-area {
+    .submit-button {
+      float: right;
+      text-align: center;
+    }
+  }
+
   #comment-panel {
     .collapsible-header:hover {
       background-image: url("https://media.giphy.com/media/QIZ020wbKnNio/giphy.gif");
@@ -117,9 +135,7 @@ h1 {
       .col.s12 {
         margin-left: -10px;    
       }
-      #component_author.materialize-textarea {
-        padding: 0;
-      }
+
       input[type="text"] {
         border: none;
       }
@@ -167,6 +183,7 @@ h1 {
   }
 
   #gif-search {
+    margin-top: 20px;
     border-radius: 30px;
     padding: 10px 20px;
     border: none;
@@ -218,10 +235,21 @@ h1 {
   }
 }
 
+.prompt-q {
+  color: $rose;
+  margin-top: 10px;
+}
+
+.prompt {
+  font-style: italic;
+  font-size: 1em;
+  line-height: 1.4;
+  color: $black;
+}
 
 .dat-feedz {
   width: 85%;
-  margin: 5% auto;
+  margin: 2% auto;
   text-align: center;
 
   .grid-item {
@@ -234,13 +262,6 @@ h1 {
     letter-spacing: 2px;
     color: $black;
     font-size: 2em;
-  }
-
-  .prompt {
-    font-style: italic;
-    font-size: 1em;
-    line-height: 1.4;
-    color: $black;
   }
 
   .long-comment {

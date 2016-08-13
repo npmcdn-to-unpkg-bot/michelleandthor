@@ -7,7 +7,7 @@
     <div class="row">
       <div class="input-field col s12">
          <%= image_tag("giphy_logo", class: "giphy-logo") %>
-        <h5>
+        <h5 class="prompt-q">
           <em>Suggested prompt: <%= @prompt.content %></em>
         </h5>
         <div class="row">
@@ -39,22 +39,22 @@
       <div class="row name-area">
         <div class="col s12">
           <div class="row">
-            <div class="input-field col s3">
+            <div class="input-field col s4">
               <i class="material-icons prefix">account_circle</i>
 
               <%= f.text_area(:author, class: 'materialize-textarea', required: true) %>
               <%= f.label(:author, "Your Name") %>
             </div>
 
-            <div class="input-field col s3">
+            <div class="input-field col s4">
               <%= f.check_box(:to_prompt, class: 'filled-in', id: 'to-prompt-gif') %>
 
               <label for="to-prompt-gif">Check if you are answering the prompt"</label>
               <%= f.hidden_field :prompt_id %>
             </div>
 
-            <div class="col s3">
-              <%= f.submit 'Submit', class: "btn waves-effect waves-light center-align", id: "gif-button" %>
+            <div class="input-field col s4 submit-column">
+              <%= f.submit 'Submit', class: "btn waves-effect waves-light submit-btn", id: "gif-button", type: "submit", name: "action" %>
             </div>
           </div>
         </div>
