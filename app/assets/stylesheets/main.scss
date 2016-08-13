@@ -14,10 +14,15 @@
   src: url('/assets/Wolf.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'Bromello';
+  src: url('/assets/bromello.ttf') format('truetype');
+}
+
 
 $default-font: 'GothamReg';
 $default-bold: 'GothamBold';
-$accent-font: 'Wolf';
+$accent-font: 'Bromello';
 $black: black;
 $charcoal: #2E2E30;
 $rose: #ffdee3;
@@ -281,7 +286,7 @@ h1 {
       background: $black;
       color: $rose;
       padding: 5%;
-      line-height: .8;
+      line-height: 1;
       letter-spacing: 2px;
     }
     .author-name {
@@ -303,6 +308,9 @@ h1 {
     &.card {
       background: $rose;
       text-align: center;
+      .card-image img {
+        margin-bottom: 10px;
+      }
       .card-content {
         padding: 5px;
         .prompt {
