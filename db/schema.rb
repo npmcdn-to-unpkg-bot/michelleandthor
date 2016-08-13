@@ -34,5 +34,5 @@ ActiveRecord::Schema.define(version: 20160812063505) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "components", "prompts"
+  # add_foreign_key "components", "prompts"
 end
