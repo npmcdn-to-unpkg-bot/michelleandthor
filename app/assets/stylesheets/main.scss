@@ -30,7 +30,7 @@ $white: #fffefb;
 
 body {
   font-family: $default-font, sans-serif;
-  font-size: 2em;
+  font-size: 16px;
   background: $black;
   color: $white;
 }
@@ -226,7 +226,7 @@ h1 {
 
   .grid-item {
     padding: 0;
-    margin: 1%;
+    margin: 0 1% 1% 0;
   }
 
   .author-name {
@@ -238,8 +238,7 @@ h1 {
 
   .prompt {
     font-style: italic;
-    font-size: .75em;
-    margin-bottom: 0;
+    font-size: 1em;
     color: $black;
   }
 
@@ -312,7 +311,7 @@ h1 {
   .row .col.m4 {
     width: 32%;
     .card {
-      margin: 10px;
+      /*margin: 0 10px 10px 10px;*/
     }
   }
 }
