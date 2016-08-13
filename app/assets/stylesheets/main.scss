@@ -239,6 +239,7 @@ h1 {
   .prompt {
     font-style: italic;
     font-size: 1em;
+    line-height: 1.4;
     color: $black;
   }
 
@@ -282,7 +283,7 @@ h1 {
       background: $rose;
       text-align: center;
       .card-content {
-        padding: 0;
+        padding: 5px;
         .prompt {
           color: $black;
           margin-top: 10px;
