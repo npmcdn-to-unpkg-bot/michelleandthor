@@ -39,21 +39,21 @@
       <div class="row name-area">
         <div class="col s12">
           <div class="row">
-            <div class="input-field col s4">
+            <div class="input-field col s12 m4">
               <i class="material-icons prefix">account_circle</i>
 
               <%= f.text_area(:author, class: 'materialize-textarea', required: true) %>
               <%= f.label(:author, "Your Name") %>
             </div>
 
-            <div class="input-field col s4">
+            <div class="input-field col s12 m4">
               <%= f.check_box(:to_prompt, class: 'filled-in', id: 'to-prompt-gif') %>
 
               <label for="to-prompt-gif">Check if you are answering the prompt"</label>
               <%= f.hidden_field :prompt_id %>
             </div>
 
-            <div class="input-field col s4 submit-column">
+            <div class="input-field col s12 m4 submit-column">
               <%= f.submit 'Submit', class: "btn waves-effect waves-light submit-btn", id: "gif-button", type: "submit", name: "action" %>
             </div>
           </div>
