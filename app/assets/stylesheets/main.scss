@@ -30,7 +30,7 @@ $dark-pink: #B8124A;
 $gold: #fedd96;
 $cream: #F8E2D9;
 $white: #fffefb;
-
+$card-padding: 8%;
 
 
 body {
@@ -80,7 +80,7 @@ h1 {
   background-position: center;
   height: 90vh;
   margin: 0 auto;
-  padding: 10%;
+  padding: 7%;
   text-align: center;
 
   h1 {
@@ -105,6 +105,7 @@ h1 {
 
   ul {
     background: black;
+    margin-top: 0px;
 
     .collapsible-header {
       background: black;
@@ -137,6 +138,10 @@ h1 {
       background-image: url("https://media.giphy.com/media/QIZ020wbKnNio/giphy.gif");
       /*background-image: url("https://media.giphy.com/media/mA10sco0hGFaM/giphy.gif");*/
       background-size: 40%;
+    }
+
+    .prompt-q {
+      margin-top: 20px;
     }
     .row.name-area {
       .col.s12 {
@@ -289,7 +294,7 @@ h1 {
   .long-comment {
     background: $rose;
     color: $black;
-    padding: 5%;
+    padding: $card-padding;
     border-radius: 3px;
     .author-name {
       margin: 0px;
@@ -302,7 +307,7 @@ h1 {
     &.card {
       background: $black;
       color: $rose;
-      padding: 5%;
+      padding: $card-padding;
       line-height: 1;
       letter-spacing: 2px;
     }
@@ -329,7 +334,7 @@ h1 {
         margin-bottom: 10px;
       }
       .card-content {
-        padding: 5px;
+        padding: 5px $card-padding;
         .prompt {
           color: $black;
           margin-top: 10px;
