@@ -63,7 +63,8 @@ $(document).ready(function(){
     $(this).css("border", "3px solid beige").addClass("selected-gif")
   });
   
-  $('#gif-form').on('submit', function(){
+  $('#gif-form').on('submit', function(e){
+    // e.preventDefault()
 
     var selectedGifUrl = $('.all-gifs .selected-gif').attr('src');
     var author = $('.main-gif-section #component_author').val();
@@ -84,6 +85,9 @@ $(document).ready(function(){
       console.log("complete");
     });
   })
+
+  // don't do automatic form submit from rails side
+
   // user selects the gif they want & it's highlighted
   // user clicks Submit - send that img, author, to_post to the backend
   // save it as a Gif
