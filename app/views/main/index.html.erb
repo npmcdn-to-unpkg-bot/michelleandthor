@@ -2,76 +2,76 @@
 	<h1>Michelle and Thor</h1>
 	<p>19 August 2016</p>
 	<p>"There may be dares. Perhaps alcohol."</p>
-	</div>
+        
+</div>
 
-  <div class="choosey">
-    <ul class="collapsible" data-collapsible="accordion">
-      <%= render partial: "leave_comment" %>
-      <%= render partial: "leave_gif" %>
-      <%= render partial: "tagged_feed" %>
-    </ul>
+<div class="choosey">
+  <ul class="collapsible" data-collapsible="accordion">
+    <%= render partial: "leave_comment" %>
+    <%= render partial: "leave_gif" %>
+    <%= render partial: "leave_img" %>
+    <%= render partial: "tagged_feed" %>
+  </ul>
+</div>
+
+<a id="all-comments"></a>
+<h1 class="center">Feed</h1>
+<div class="dat-feedz grid" data-masonry='{ "itemSelector": ".grid-item", "percentPosition": true}'>
+  <div class="grid-sizer"></div>
+
+  <div class="row">
+		<% if @components.present? %>
+			<% @components.each do |c| %>
+        <div class="grid-item col s12 m4">
+          <% if c.long_comment? %>
+            <div class="long-comment">
+              <h2 class="author-name">
+                <%= c.author %>
+              </h2>
+              <p class="content">
+                <%= c.content %>
+              </p>
+              <% if c.to_prompt? %>
+               <p class="prompt">
+                 <%= @prompt.content %>
+               </p>
+              <% end %>
+            </div>
+          <% elsif c.short_comment? %>
+            <div class="card short-comment">
+              <h2 class="author-name">
+                <%= c.author %>
+              </h2>
+              <p class="content">
+                <%= c.content %>
+              </p>
+              <% if c.to_prompt? %>
+               <p class="prompt">
+                 <%= @prompt.content %>
+               </p>
+              <% end %>
+            </div>
+          <% elsif c.gif_img? %>
+            <div class="card gif-comment">
+               <div class="card-image">
+                <%= image_tag c.content %>
+               </div>
+               <div class="card-content">
+                 <h2 class="card-title author-name">
+                   <%= c.author %>
+                 </h2>
+                 <% if c.to_prompt? %>
+                  <p class="prompt">
+                    <%= @prompt.content %>
+                  </p>
+                 <% end %>
+               </div>
+            </div>
+  			  <% end %>
+        </div>
+      <% end %>
+		<% else %>
+			no comments currently. let's fill this up!
+		<% end %>
   </div>
-
-  <a id="all-comments"></a>
-  <h1 class="center">Feed</h1>
-  <div class="dat-feedz grid" data-masonry='{ "itemSelector": ".grid-item", "percentPosition": true}'>
-    <div class="grid-sizer"></div>
-
-    <div class="row">
-  		<% if @components.present? %>
-  			<% @components.each do |c| %>
-          <div class="grid-item col s12 m4">
-            <% if c.long_comment? %>
-              <div class="long-comment">
-                <h2 class="author-name">
-                  <%= c.author %>
-                </h2>
-                <p class="content">
-                  <%= c.content %>
-                </p>
-                <% if c.to_prompt? %>
-                 <p class="prompt">
-                   <%= @prompt.content %>
-                 </p>
-                <% end %>
-              </div>
-            <% elsif c.short_comment? %>
-              <div class="card short-comment">
-                <h2 class="author-name">
-                  <%= c.author %>
-                </h2>
-                <p class="content">
-                  <%= c.content %>
-                </p>
-                <% if c.to_prompt? %>
-                 <p class="prompt">
-                   <%= @prompt.content %>
-                 </p>
-                <% end %>
-              </div>
-            <% elsif c.gif? %>
-              <div class="card gif-comment">
-                 <div class="card-image">
-                  <%= image_tag c.content %>
-                 </div>
-                 <div class="card-content">
-                   <h2 class="card-title author-name">
-                     <%= c.author %>
-                   </h2>
-                   <% if c.to_prompt? %>
-                    <p class="prompt">
-                      <%= @prompt.content %>
-                    </p>
-                   <% end %>
-                 </div>
-              </div>
-    			  <% end %>
-          </div>
-        <% end %>
-  		<% else %>
-  			no comments currently. let's fill this up!
-  		<% end %>
-    </div>
-	</div>
-    
 </div>

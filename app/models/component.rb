@@ -4,8 +4,8 @@ class Component < ActiveRecord::Base
   # temporary fix for now
   scope :is_approved, -> {where.not(author: [nil, ""], content: nil, category: nil) }
   scope :by_age, ->{ order(:created_at) }
-  def gif?
-    category == 'gif'
+  def gif_img?
+    category == 'gif' || category == 'img'
   end
 
   def long_comment?

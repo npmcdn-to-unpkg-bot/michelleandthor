@@ -136,7 +136,6 @@ h1 {
   #comment-panel {
     .collapsible-header:hover {
       background-image: url("https://media.giphy.com/media/QIZ020wbKnNio/giphy.gif");
-      /*background-image: url("https://media.giphy.com/media/mA10sco0hGFaM/giphy.gif");*/
       background-size: 40%;
     }
 
@@ -156,14 +155,15 @@ h1 {
       }
     }
   }
-
+  
   #gif-panel:hover {
     background-image: url("http://bestanimations.com/Nature/Flora/blooming/blooming-orchid-gif.gif");
-    /*background: image-url("http://bestanimations.com/Nature/Flora/blooming/flower-bloom-animated-gif9.gif");*/
-    /*background-image: url("https://media.giphy.com/media/LPK94uJOQvExq/giphy.gif");*/
-    /*background-image: url("https://media.giphy.com/media/czevJlexlxAyc/giphy.gif");*/
-    /*background-image: url("https://media.giphy.com/media/12NkbKX4FTioP6/giphy.gif");*/
     background-size: 50%;
+  }
+
+  #img-panel:hover {
+    background-image: url("https://media.giphy.com/media/czevJlexlxAyc/giphy.gif");
+    background-size: 65%;
   }
 
   #hash-panel:hover {
@@ -355,6 +355,18 @@ h1 {
 
   .card {
     margin: 0;
+  }
+}
+
+.comment-content-area {
+  h5 {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .dat-feedz {
+    width: 1000px;
   }
 }
 

@@ -1,6 +1,6 @@
-<li id="comment-panel">
-    <div class="collapsible-header">
-      Leave a comment
+<li id="main-img-section">
+    <div class="collapsible-header" id="img-panel">
+      Link an image/gif
       <i class="fa fa-caret-down" aria-hidden="true"></i>
 
     </div>
@@ -9,13 +9,13 @@
         <h5 class="prompt-q">
           <em>Suggested prompt: <%= @prompt.content %></em>
         </h5>
-        <%= form_for :component, url: comments_path, method: :post, class: "col s12", html: {id: "comment-form"} do |f| %>
+        <%= form_for :component, url: imgs_path, method: :post, class: "col s12", html: {id: "comment-form"} do |f| %>
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">mode_edit</i>
                 <%= f.text_area(:content, class: "materialize-textarea") %>
            
-                <%= f.label(:content, "Write your message below")%>
+                <%= f.label(:content, "Copy & paste a URL of an image or gif of your choice. URL link must end with .jpg, .jpeg, .gif (i.e. http://stuffpoint.com/dogs/image/307235-dogs-cute-dog.jpg)")%>
 
             </div>
           </div>
