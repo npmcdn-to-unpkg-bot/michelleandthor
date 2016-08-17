@@ -76,20 +76,10 @@ $(document).ready(function(){
       data: {content: selectedGifUrl, author: author, to_prompt: to_prompt, prompt_id: prompt_id},
     })
     .done(function() {
-      console.log("success");
-    })
-    .fail(function() {
-      console.log("error");
-    })
-    .always(function() {
-      console.log("complete");
+      window.location.href = '/'
+      //temporary fix to clear the query parameters after success
     });
-  })
-  // user selects the gif they want & it's highlighted
-  // user clicks Submit - send that img, author, to_post to the backend
-  // save it as a Gif
-  // render it in the feed
-
+  });
 });
 
 jQuery(window).on('load', function(){ 
