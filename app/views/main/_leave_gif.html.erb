@@ -1,6 +1,6 @@
 <li class="main-gif-section">
   <div class="collapsible-header" id="gif-panel">
-    Post a gif!
+    Post a gif
     <i class="fa fa-caret-down" aria-hidden="true"></i>
   </div>
   <div class="collapsible-body">
@@ -35,31 +35,32 @@
         </ul>
       </div>
       
-      <%= form_for :component, url: gifs_path, method: :post, class: "col s12", html: {id: "gif-form"} do |f| %>
-      <div class="row name-area">
-        <div class="col s12">
-          <div class="row">
-            <div class="input-field col s12 m4">
-              <i class="material-icons prefix">account_circle</i>
+      <form id="gif-form">
+        <div class="row name-area">
+          <div class="col s12">
+            <div class="row">
+              <div class="input-field col s12 m4">
+                <i class="material-icons prefix active">account_circle</i>
 
-              <%= f.text_area(:author, class: 'materialize-textarea', required: true) %>
-              <%= f.label(:author, "Your Name") %>
-            </div>
+                <textarea class="materialize-textarea" required="required" name="component[author]" id="component_author"></textarea>
+                <label for="component_author" class="active">Your Name</label>
+              </div>
 
-            <div class="input-field col s12 m4">
-              <%= f.check_box(:to_prompt, class: 'filled-in', id: 'to-prompt-gif') %>
+              <div class="input-field col s12 m4">
+                <input name="component[to_prompt]" type="hidden" value="0"><input class="filled-in" id="to-prompt-gif" type="checkbox" value="1" name="component[to_prompt]">
 
-              <label for="to-prompt-gif">Check if you are answering the prompt</label>
-              <%= f.hidden_field :prompt_id, value: @prompt.id %>
-            </div>
+                <label for="to-prompt-gif">Check if you are answering the prompt</label>
+                <input value="3" type="hidden" name="component[prompt_id]" id="component_prompt_id">
+              </div>
 
-            <div class="input-field col s12 m4 submit-column">
-              <%= f.submit 'Submit', class: "btn waves-effect waves-light submit-btn", id: "gif-button", type: "submit", name: "action" %>
+              <div class="input-field col s12 m4 submit-column">
+                <i class="btn waves-effect waves-light submit-btn waves-input-wrapper"><input type="submit" name="action" value="Submit" class="waves-button-input" id="gif-button"></i>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <% end %>
+      </form>
+
 
     </div>
   </div>
