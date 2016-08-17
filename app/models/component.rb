@@ -2,7 +2,7 @@ class Component < ActiveRecord::Base
   belongs_to :prompt
 
   # temporary fix for now
-  scope :is_approved, -> {where.not(author: [nil, ""], content: nil, category: nil) }
+  scope :is_approved, -> {where.not(author: [nil, ""], category: nil) }
   scope :by_age, ->{ order(:created_at) }
   def gif_img?
     category == 'gif' || category == 'img'

@@ -60,19 +60,19 @@ $(document).ready(function(){
   // select gif
   $('.all-gifs').on('click', 'img', function(){
     $('.all-gifs img').css("border", "none").removeClass("selected-gif");
-    $(this).css("border", "3px solid beige").addClass("selected-gif")
+    $(this).css("border", "3px solid #ffdee3").addClass("selected-gif")
   });
   
   $('#gif-form').on('submit', function(){
 
-    var selectedGifUrl = $('.all-gifs .selected-gif').attr('src');
     var author = $('.main-gif-section #component_author').val();
     var to_prompt = $('.main-gif-section #to-prompt-gif').is(':checked');
-
+    var prompt_id = $('#component_prompt_id').val();
+    var selectedGifUrl = $('.all-gifs .selected-gif').attr('src');
     $.ajax({
       url: '/gifs',
       type: 'post',
-      data: {selectedGifUrl: selectedGifUrl, author: author, to_prompt: to_prompt},
+      data: {selectedGifUrl: selectedGifUrl, author: author, to_prompt: to_prompt, prompt_id: prompt_id},
     })
     .done(function() {
       console.log("success");

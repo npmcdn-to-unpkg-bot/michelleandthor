@@ -8,7 +8,7 @@
 <div class="choosey">
   <ul class="collapsible" data-collapsible="accordion">
     <%= render partial: "leave_comment" %>
-    <%= render partial: "leave_gif" %>
+    <!-- <%= render partial: "leave_gif" %> -->
     <%= render partial: "leave_img" %>
     <%= render partial: "tagged_feed" %>
   </ul>
@@ -22,7 +22,7 @@
   <div class="row">
 		<% if @components.present? %>
 			<% @components.each do |c| %>
-        <div class="grid-item col s12 m4">
+        <div class="grid-item col s12 m4" data-id="<%= c.id %>">
           <% if c.long_comment? %>
             <div class="long-comment">
               <h2 class="author-name">
@@ -31,9 +31,9 @@
               <p class="content">
                 <%= c.content %>
               </p>
-              <% if c.to_prompt? %>
+              <% if c.to_prompt? && c.prompt_id %>
                <p class="prompt">
-                 <%= @prompt.content %>
+                <%= Prompt.find(c.prompt_id).content %>
                </p>
               <% end %>
             </div>
@@ -45,9 +45,9 @@
               <p class="content">
                 <%= c.content %>
               </p>
-              <% if c.to_prompt? %>
+              <% if c.to_prompt? && c.prompt_id %>
                <p class="prompt">
-                 <%= @prompt.content %>
+                 <%= Prompt.find(c.prompt_id).content %>
                </p>
               <% end %>
             </div>
@@ -60,9 +60,9 @@
                  <h2 class="card-title author-name">
                    <%= c.author %>
                  </h2>
-                 <% if c.to_prompt? %>
+                 <% if c.to_prompt? && c.prompt_id %>
                   <p class="prompt">
-                    <%= @prompt.content %>
+                    <%= Prompt.find(c.prompt_id).content %>
                   </p>
                  <% end %>
                </div>

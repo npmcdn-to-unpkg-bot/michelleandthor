@@ -31,6 +31,7 @@
                 <div class="input-field col s12 m4">
                   <%= f.check_box(:to_prompt, class: 'filled-in', id: 'to-prompt-img') %>
                   <label for="to-prompt-img">Check if you are answering the prompt</label>
+                  <%= f.hidden_field :prompt_id, value: @prompt.id %>
       
                 </div>
                 <div class="input-field col s12 m4 submit-column">

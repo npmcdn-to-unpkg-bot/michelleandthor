@@ -50,7 +50,7 @@
               <%= f.check_box(:to_prompt, class: 'filled-in', id: 'to-prompt-gif') %>
 
               <label for="to-prompt-gif">Check if you are answering the prompt</label>
-              <%= f.hidden_field :prompt_id %>
+              <%= f.hidden_field :prompt_id, value: @prompt.id %>
             </div>
 
             <div class="input-field col s12 m4 submit-column">
