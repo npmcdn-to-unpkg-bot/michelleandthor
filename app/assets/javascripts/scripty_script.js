@@ -63,7 +63,7 @@ $(document).ready(function(){
     $(this).css("border", "3px solid #ffc04c").addClass("selected-gif");
   });
   
-  $('#gif-form').on('submit', function(){
+  $('#gif-button').on('click', function(){
     var author = $('.main-gif-section #component_author').val();
     var to_prompt = $('.main-gif-section #to-prompt-gif').is(':checked');
     var prompt_id = $('#component_prompt_id').val();
@@ -75,7 +75,7 @@ $(document).ready(function(){
       data: {content: selectedGifUrl, author: author, to_prompt: to_prompt, prompt_id: prompt_id},
     })
     .done(function() {
-      // location.href = '/';
+      location.href = '/';
       //temporary fix to clear the query parameters after success
     });
   });
