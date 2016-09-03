@@ -23,21 +23,28 @@
 $default-font: 'GothamReg';
 $default-bold: 'GothamBold';
 $accent-font: 'Bromello';
-$black: black;
-$charcoal: #2E2E30;
-$rose: #ffdee3;
-$dark-pink: #B8124A;
+$primary: #fffefb; /*white background*/
+$default-color-text: #2E2E30; /*charcoal text*/
+$secondary-bkgnd: #ffc04c; /*light orange*/
+/*$dark-pink: #B8124A;*/
+/*$charcoal: #2E2E30;
 $gold: #fedd96;
-$cream: #F8E2D9;
-$white: #fffefb;
+$cream: #F8E2D9;*/
 $card-padding: 8%;
+
+$white: $primary;
+$charcoal: $default-color-text;
+$orange: $secondary-bkgnd;
+$orange-dark: #e59400;
+
+
 
 
 body {
   font-family: $default-font, sans-serif;
   font-size: 16px;
-  background: $black;
-  color: $white;
+  background: $primary;
+  color: $default-color-text;
 }
 
 p {
@@ -46,7 +53,7 @@ p {
 }
 
 input {
-  color: black;
+  color: $orange;
 }
 
 input[type="text"] {
@@ -67,14 +74,14 @@ h1 {
 
 
 .btn, .btn-large {
-  background: $rose;
+  background: $secondary-bkgnd;
   &:hover {
-    background: $dark-pink;
+    background: $orange-dark;
   }
 }
 
 .hero {
-  background: image-url("engagement.jpg");
+  background: image-url("IMG_3370.JPG");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -82,6 +89,7 @@ h1 {
   margin: 0 auto;
   padding: 7%;
   text-align: center;
+  color: $white;
 
   h1 {
     margin: 0 auto;
@@ -100,16 +108,16 @@ h1 {
 .choosey {
   .fa.fa-caret-down {
     float: right;
-    color: white;
+    color: $primary;
   }
 
   ul {
-    background: black;
+    background: $white;
     margin-top: 0px;
 
     .collapsible-header {
-      background: black;
-      height: 150px;
+      background: $white;
+      height: 75px;
       font-size: 1.25em;
       &:hover {
         background-position: center center;
@@ -135,8 +143,7 @@ h1 {
 
   #comment-panel {
     .collapsible-header:hover {
-      background-image: url("https://media.giphy.com/media/QIZ020wbKnNio/giphy.gif");
-      background-size: 40%;
+      background-image: url("https://media.giphy.com/media/WrlcUrRNgOHu0/giphy.gif");
     }
 
     .prompt-q {
@@ -157,17 +164,16 @@ h1 {
   }
   
   #gif-panel:hover {
-    background-image: url("http://bestanimations.com/Nature/Flora/blooming/blooming-orchid-gif.gif");
-    background-size: 50%;
+    background-image: url("https://media.giphy.com/media/dcMjM5PAYSpjO/giphy.gif");
+    background-size: 5%;
   }
 
   #img-panel:hover {
-    background-image: url("https://media.giphy.com/media/czevJlexlxAyc/giphy.gif");
-    background-size: 65%;
+    background-image: url("https://media.giphy.com/media/E2iNihn21pRkc/giphy.gif");
   }
 
   #hash-panel:hover {
-    background-image: url("https://media.giphy.com/media/fw9jSdfb3wYx2/giphy.gif");
+    background-image: url("https://media.giphy.com/media/E2iNihn21pRkc/giphy.gif");
   }
 
 }
@@ -212,7 +218,7 @@ h1 {
     margin-top: 20px;
     border-radius: 30px;
     padding: 10px 20px;
-    border: none;
+    border: 1.5px solid $orange;
     height: 45px;
     &:focus {
       outline: none;
@@ -262,7 +268,7 @@ h1 {
 }
 
 .prompt-q {
-  color: $rose;
+  color: $secondary-bkgnd;
   margin-top: 10px;
 }
 
@@ -270,7 +276,7 @@ h1 {
   font-style: italic;
   font-size: 1em;
   line-height: 1.4;
-  color: $black;
+  color: $primary;
   margin-bottom: 0;
 }
 
@@ -287,13 +293,13 @@ h1 {
   .author-name {
     font-family: $accent-font;
     letter-spacing: 2px;
-    color: $black;
+    color: $primary;
     font-size: 2em;
   }
 
   .long-comment {
-    background: $rose;
-    color: $black;
+    background: $secondary-bkgnd;
+    color: $primary;
     padding: $card-padding;
     border-radius: 3px;
     .author-name {
@@ -302,17 +308,17 @@ h1 {
   }
 
   .short-comment {
-    border: 2px solid $rose;
+    border: 2px solid $secondary-bkgnd;
     border-radius: 3px;
     &.card {
-      background: $black;
-      color: $rose;
+      background: $primary;
+      color: $secondary-bkgnd;
       padding: $card-padding;
       line-height: 1;
       letter-spacing: 2px;
     }
     .author-name {
-      color: $rose;
+      color: $secondary-bkgnd;
       font-family: $default-font;
       font-size: 1em;
     }
@@ -321,14 +327,14 @@ h1 {
       font-size: 3em;
     }
     .prompt {
-      color: $rose;
+      color: $secondary-bkgnd;
     }
   }
 
   .gif-comment {
     border-radius: 3px;
     &.card {
-      background: $rose;
+      background: $secondary-bkgnd;
       text-align: center;
       .card-image img {
         margin-bottom: 10px;
@@ -336,7 +342,7 @@ h1 {
       .card-content {
         padding: 5px $card-padding;
         .prompt {
-          color: $black;
+          color: $primary;
           margin-top: 10px;
           margin-bottom: 10px;
         }
@@ -372,3 +378,16 @@ h1 {
     }
   }
 }
+
+.pagination li.active {
+  background: $orange;
+}
+
+.waves-effect input[type="submit"] {
+  color: white;
+}
+
+/*[type="checkbox"].filled-in:checked+label:after {
+  border: 2px solid $orange;
+  background: $orange;
+}*/

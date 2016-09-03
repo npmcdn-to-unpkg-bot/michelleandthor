@@ -60,7 +60,7 @@ $(document).ready(function(){
   // select gif
   $('.all-gifs').on('click', 'img', function(){
     $('.all-gifs img').css("border", "none").removeClass("selected-gif");
-    $(this).css("border", "3px solid #ffdee3").addClass("selected-gif");
+    $(this).css("border", "3px solid #ffc04c").addClass("selected-gif");
   });
   
   $('#gif-form').on('submit', function(){

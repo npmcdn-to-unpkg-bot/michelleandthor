@@ -11,15 +11,15 @@ default: &default
 
 development:
   <<: *default
-  database: dat_database_development
+  database: grube_database_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: dat_database_test
+  database: grube_database_test
 
 production:
   <<: *default
-  database: dat_database_production
+  database: grube_database_production
