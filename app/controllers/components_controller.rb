@@ -1,6 +1,9 @@
 class ComponentsController < ApplicationController
 
   def create_gif
+    if params[:author] == ""
+      params[:author] == "Oops, didn't catch the name"
+    end
     Component.create!(author: params[:author], content: params[:content],to_prompt: ActiveRecord::Type::Boolean.new.type_cast_from_database(params[:to_prompt]), prompt_id: params[:prompt_id], category: "gif")
     redirect_to root_path(anchor: "all-comments")
   end
