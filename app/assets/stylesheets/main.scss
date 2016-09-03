@@ -52,6 +52,10 @@ p {
   word-wrap: break-word;
 }
 
+.small-text {
+  font-size: 0.85em;
+}
+
 input {
   color: $orange;
 }
@@ -165,7 +169,7 @@ h1 {
   
   #gif-panel:hover {
     background-image: url("https://media.giphy.com/media/dcMjM5PAYSpjO/giphy.gif");
-    background-size: 5%;
+    /*background-size: 5%;*/
   }
 
   #img-panel:hover {
@@ -386,6 +390,26 @@ h1 {
 .waves-effect input[type="submit"] {
   color: white;
 }
+
+#comment-form {
+  ::-webkit-input-placeholder {
+     font-size: 0.5em;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+     font-size: 0.5em;  
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+     font-size: 0.5em;  
+  }
+
+  :-ms-input-placeholder {  
+     font-size: 0.5em;  
+  }
+
+}
+
 
 /*[type="checkbox"].filled-in:checked+label:after {
   border: 2px solid $orange;
